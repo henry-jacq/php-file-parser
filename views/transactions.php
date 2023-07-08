@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Transactions</title>
+    <title>Transactions Table</title>
     <style>
         table {
             width: 100%;
@@ -47,14 +47,14 @@
                         <td>
                             <?php if ($transaction['amount'] < 0) : ?>
                                 <span style="color: red;">
-                                    <?= formatDollarAmount($transaction['amount']) ?>
+                                    <?= formatCurrency($transaction['amount']) ?>
                                 </span>
                             <?php elseif ($transaction['amount'] > 0) : ?>
                                 <span style="color: green;">
-                                    <?= formatDollarAmount($transaction['amount']) ?>
+                                    <?= formatCurrency($transaction['amount']) ?>
                                 </span>
                             <?php else : ?>
-                                <?= formatDollarAmount($transaction['amount']) ?>
+                                <?= formatCurrency($transaction['amount']) ?>
                             <?php endif ?>
                         </td>
                     </tr>
@@ -64,15 +64,15 @@
         <tfoot>
             <tr>
                 <th colspan="3">Total Income:</th>
-                <td><?= formatDollarAmount($totals['totalIncome'] ?? 0) ?></td>
+                <td><?= formatCurrency($totals['totalIncome'] ?? 0) ?></td>
             </tr>
             <tr>
                 <th colspan="3">Total Expense:</th>
-                <td><?= formatDollarAmount($totals['totalExpense'] ?? 0) ?></td>
+                <td><?= formatCurrency($totals['totalExpense'] ?? 0) ?></td>
             </tr>
             <tr>
                 <th colspan="3">Net Total:</th>
-                <td><?= formatDollarAmount($totals['netTotal'] ?? 0) ?></td>
+                <td><?= formatCurrency($totals['netTotal'] ?? 0) ?></td>
             </tr>
         </tfoot>
     </table>
