@@ -4,6 +4,12 @@
 <head>
     <title>Transactions Table</title>
     <style>
+        p {
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: x-large;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -13,7 +19,7 @@
         table tr th,
         table tr td {
             padding: 5px;
-            border: 1px #eee solid;
+            border: 1px grey solid;
         }
 
         tfoot tr th,
@@ -27,7 +33,8 @@
     </style>
 </head>
 
-<body>
+<body style="padding: 10px;">
+    <p>Transactions:</p>
     <table>
         <thead>
             <tr>
@@ -63,15 +70,15 @@
         </tbody>
         <tfoot>
             <tr>
-                <th colspan="3">Total Income:</th>
+                <th style="font-weight: normal;" colspan="3">Total Income:</th>
                 <td><?= formatCurrency($totals['totalIncome'] ?? 0) ?></td>
             </tr>
             <tr>
-                <th colspan="3">Total Expense:</th>
+                <th style="font-weight: normal;" colspan="3">Total Expense:</th>
                 <td><?= formatCurrency($totals['totalExpense'] ?? 0) ?></td>
             </tr>
             <tr>
-                <th colspan="3">Net Total:</th>
+                <th style="font-weight: normal;" colspan="3">Net Total:</th>
                 <td><?= formatCurrency($totals['netTotal'] ?? 0) ?></td>
             </tr>
         </tfoot>
